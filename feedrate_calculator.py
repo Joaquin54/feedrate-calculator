@@ -3,12 +3,14 @@
 
 import difflib
 
+first_gcode = input("Enter the first file name:")
+second_gcode = input("Enter the second file name:")
 # Read the first G-code file
-with open('insert your file name', 'r') as file1:
+with open(first_gcode, 'r') as file1:
     first_gcode = file1.readlines()
 
 # Read the second G-code file
-with open('insert your file name here', 'r') as file2:
+with open(second_gcode, 'r') as file2:
     second_gcode = file2.readlines()
 
 print("Files read successfully.")
@@ -80,8 +82,8 @@ second_gcode_count = len(second_gcode_feed_rates)
 second_gcode_average_feed_rate = second_gcode_total_feed_rate / second_gcode_count if second_gcode_count else 0
 
 print("Average feed rate calculation completed.")
-print(f"Darco Version Average Feed Rate: {first_gcode_average_feed_rate} mm/min")
-print(f"Non-Darco Version Average Feed Rate: {second_gcode_average_feed_rate} mm/min")
+print(f"File #1 Average Feed Rate: {first_gcode_average_feed_rate} mm/min")
+print(f"File #2 Average Feed Rate: {second_gcode_average_feed_rate} mm/min")
 
 # Return the average feed rates for further use
 first_gcode_average_feed_rate, second_gcode_average_feed_rate
